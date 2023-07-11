@@ -1,0 +1,165 @@
+import datetime
+item_name = []
+item_qty = []
+item_price = []
+print("                                  SARADA HOTELS, MENU CARD")
+d = datetime.datetime.now()
+print(d.strftime("                                     Date : %d/%b/%Y"))
+name = input("      Enter Name :")
+
+str1 = "veg meals       paneer curry        veg biriyani        mushroom curry      rice"
+str3 = "Idly       Masala Dosa       Puri      Vada      Bonda     Uttapam       Upma      Chappathi"
+str2 = "chicken curry,chicken biriyani,fish curry,prawn,mutton biriyani"
+str4 = "sprite      fanta       pepsi       thumps up       mountain dew        maaza       coco cola "
+lst1 = str1.split(    )
+lst2 = str2.split(",")
+lst3 = str3.split(    )
+lst4 = str4.split(    )
+while(True):
+
+    print("     Choose your Choice :")
+    print(" ")
+    print("      1.Veg-items      2.Non-Veg-items      3.Tiffins       4.Drinks        ")
+    print(" ")
+
+    n = int(input("       Enter your choice : "))
+    print(" ")
+
+    if (n == 3):
+        print("1.Idly       2.Masala Dosa       3.Puri      4.Vada      5.Bonda     6.Uttapam       7.Upma      8.Chappathi ")
+
+        tiff_nam=input("Give your item Name : "  )
+        print(" ")
+        qty=int(input("no of items"))
+        #if(tiff_nam=="Exit" or "exit"):
+         #   break
+        tiff={
+                "Idly":{"price":30,"quantity":qty*30},
+                "Masala Dosa":{"price":40,"quantity":qty*40},
+                "Puri" :{"price":45,"quantity":qty*45},
+                "Vada": {"price": 30, "quantity": qty*30},
+                "Bonda": {"price": 30, "quantity": qty*30},
+                "Uttapam":{"price": 40, "quantity": qty*40},
+                "Upma": {"price": 40, "quantity": qty*40},
+                "Chappathi": {"price": 45, "quantity":qty*45},
+            }
+        if(tiff_nam in lst3):
+                item_name.append(tiff_nam)
+                item_qty.append(qty)
+                ca=tiff[tiff_nam]["quantity"]
+                item_price.append(ca)
+        m = int(input("Want to add extra items 1.Yes or 2.No : "))
+        if (m == 1):
+            continue
+        else:
+            break
+
+    if (n == 1):
+        print("1.veg meals       2.paneer curry        3.veg biriyani        4.mushroom curry      5.rice")
+        print(" ")
+
+        veg_nam = input("Give your item Name : " )
+        print(" ")
+
+        qty = int(input("no of items : "))
+            # if(tiff_nam=="Exit" or "exit"):
+            #   break
+        print(" ")
+        vegg = {
+                "veg meals": {"price": 100, "quantity": qty * 100},
+                "paneer curry": {"price": 140, "quantity": qty * 140},
+                "veg biriyani": {"price": 180, "quantity": qty * 180},
+                "mushroom curry": {"price": 150, "quantity": qty * 150},
+                "rice": {"price": 65, "quantity": qty * 65},
+
+            }
+        if(veg_nam in lst1):
+                item_name.append(veg_nam)
+                item_qty.append(qty)
+                ca = vegg[veg_nam]["quantity"]
+                item_price.append(ca)
+        print(" ")
+        m=int(input("Want to add extra items 1.Yes or 2.No : "))
+        if(m==1):
+             continue
+        else:
+            break
+    if (n == 2):
+        print("1.chicken curry       2.chicken biriyani        3.fish curry      4.prawn       5.mutton biriyani")
+
+        nveg_nam = input("Give your item Name : " )
+        print(" ")
+        qty = int(input("no of items : "))
+        nvegg = {
+
+                "chicken curry": {"price": 300, "quantity": qty * 300},
+                "chicken biriyani": {"price": 400, "quantity": qty * 400},
+                "fish curry": {"price": 420, "quantity": qty * 420},
+                "prawn": {"price": 400, "quantity": qty * 400},
+                "mutton biriyani": {"price": 265, "quantity": qty * 265},
+
+
+            }
+        if(nveg_nam in lst2):
+                item_name.append(nveg_nam)
+                item_qty.append(qty)
+                ca = nvegg[nveg_nam]["quantity"]
+                item_price.append(ca)
+
+        m=int(input("Want to add extra items 1.Yes or 2.No : "))
+        if(m==1):
+             continue
+        else:
+            break
+
+    if (n == 4):
+        print("1.sprite      2.fanta       3.pepsi       4.thumps up       5.mountain dew        6.maaza       7.coco cola")
+
+        dveg_nam = input("Give your item Name  : ")
+        print(" ")
+        qty = int(input("no of items : "))
+        dvegg = {
+                "sprite": {"price": 20, "quantity": qty * 20},
+                "fanta": {"price": 20, "quantity": qty * 20},
+                "pepsi": {"price": 20, "quantity": qty * 20},
+                "thumps up": {"price": 20, "quantity": qty * 20},
+                "mountain dew": {"price": 20, "quantity": qty * 20},
+                "maaza": {"price": 20, "quantity": qty * 20},
+                "coco cola": {"price": 20, "quantity": qty * 20},
+
+
+
+            }
+        if(dveg_nam in lst4):
+                item_name.append(dveg_nam)
+                item_qty.append(qty)
+                ca = dvegg[dveg_nam]["quantity"]
+                item_price.append(ca)
+        print(" ")
+        m=int(input("Want to add extra items 1.Yes or 2.No : "))
+        if(m==1):
+             continue
+        else:
+            break
+print(" ")
+print(" ")
+print("ITEMS            QUANTITY            PRICE FOR ITEMS")
+for i in range(0,len(item_qty)):
+    if(len(item_name)>8):
+        print(item_name[i],end= "    ")
+    else:
+        print(item_name[i],end="             ")
+    print(item_qty[i],end="                      ")
+    print(item_price[i])
+#startspaces = ' ' * (11 - len(item_name[i]))
+#endspaces = ' ' * (5 - len(str(fruitnum)))
+
+print(" ")
+print(" ")
+sum=0
+for i in range(0,len(item_price)):
+    r=item_price[i]
+    sum=sum+r
+print("             TOTAL BILL      ")
+print("        Name :",name,"       ")
+print("        Amount",sum,"         ")
